@@ -501,3 +501,26 @@
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const container = document.querySelector('#displayactive-container');
+    const devlink = document.querySelector('#team-link');
+
+    if (!container || !devlink) {
+      console.warn("container veya devlink bulunamadı");
+      return;
+    }
+
+    devlink.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (container.classList.contains('display-none')) {
+        container.classList.remove('display-none');
+        devlink.classList.add('active');
+      } else {
+        container.classList.add('display-none');
+        devlink.classList.remove('active');
+      }
+    });
+  }, 5000); // 5 saniye
+});

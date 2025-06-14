@@ -439,3 +439,11 @@ button {
     width: 14px;
   }
 }
+
+
+.display-none {
+  display: none;
+}
+.display-block {
+  display: block;
+}
